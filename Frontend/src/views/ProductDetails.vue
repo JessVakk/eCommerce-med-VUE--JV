@@ -41,5 +41,7 @@ export default {
 </script>
 
 <style>
-
+  .btn {
+  background: #054872 !important;
+}
 </style>
