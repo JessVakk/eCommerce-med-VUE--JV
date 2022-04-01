@@ -100,7 +100,7 @@ import { mapGetters, mapActions } from 'vuex'
 import ShoppingCart from './shoppingCart/ShoppingCart.vue'
 export default {
   components: { ShoppingCart },
-  name: 'PrimaryNavigation',
+  name: 'PrimaryNav',
   computed: {
     ...mapGetters(['cartItemCount', 'loggedIn'])
   },

@@ -4,11 +4,14 @@ import router from '@/router'
 export default {
   state: {
     userToken: null,
-    loggedIn: false
+    loggedIn: false,
+    register: false
   },
   getters: {
-    loggedIn: state => state.loggedIn
+    loggedIn: state => state.loggedIn,
+    register: state => state.register
   },
+    
   mutations: {
     SET_USER: (state, token) => {
       if(token) {
@@ -18,8 +21,16 @@ export default {
         state.loggedIn = false,
         state.userToken = null
       }
-    }
+    },
+  
+    SET_USERS: (state, token) => {
+      if(token) {
+        state.userToken = token
+        state.register = true
+      } 
+   }
   },
+
   actions: {
     login: async ({commit}, payload) => {
       const res = await axios.post('users/login', payload.user)
@@ -36,6 +47,21 @@ export default {
 
       }
     },
+    register: async ({commit}, payload) => {
+      const res = await axios.post('users/register', payload.user)
+      console.log(res)
+      if(res.status === 201) {
+        commit('SET_USERS', res.data.token)
+
+        if(payload.route) {
+          router.push(payload.route)
+        } else{
+          router.push({ name: 'home'})
+        }
+      }        
+    
+    },
+
     logout: ({commit}) => {
       try {
         localStorage.removeItem('token')
@@ -52,4 +78,3 @@ export default {
     }
   }
 }
- 

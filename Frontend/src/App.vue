@@ -21,8 +21,7 @@ export default {
 
 <style>
 .card-img-top {
-  width: 15em;
-  height: 15em;
+   height: 15em;
 }
 
 </style>

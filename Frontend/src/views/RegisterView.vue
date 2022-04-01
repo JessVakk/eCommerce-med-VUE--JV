@@ -1,6 +1,6 @@
 <template>
   <form class="border p-3 shadow rounded" @submit.prevent="handleSubmit">
-    <h2 class="text-center">Login</h2>
+    <h2 class="text-center">Register</h2>
   <!-- Email input -->
   <div class=" mb-4">
     <label class="form-label" for="form2Example1">Email address</label>
@@ -14,11 +14,11 @@
   </div>
 
   <!-- Submit button -->
-  <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+  <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
 
   <!-- Register buttons -->
   <div class="text-center">
-    <p>Not a member? <a href="./register">Register</a></p>
+    <p>Already a member? <a href="./Login">Login</a></p>
   </div>
 </form>
 </template>
@@ -33,7 +33,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['login']),
+    ...mapActions(['register']),
     async handleSubmit() {
       if(this.email.trim() === '' || this.password.trim() === '') {
         return
@@ -43,16 +43,8 @@ export default {
         email: this.email,
         password: this.password
       }
-      // await this.login(user)
-      // if(this.$route.query.redirect) {
-        //   this.$router.push(this.$route.query.redirect)
-      // } else {
-        //   this.$router.push({ name: 'home' })
-      // }
-
-
         let route = this.$route.query.redirect
-        this.login({user, route})
+        this.register({user, route})
     }
   }
 

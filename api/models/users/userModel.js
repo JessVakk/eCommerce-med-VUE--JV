@@ -76,7 +76,7 @@ exports.loginUserWithEmailAndPassword = (req, res) => {
         return res.status(400).json({
           statusCode: 400,
           status: false,
-          message: 'You made a bad request (probably)',
+          message: 'You made a bad request',
           err
         })
       }

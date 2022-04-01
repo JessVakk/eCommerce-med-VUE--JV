@@ -31,9 +31,11 @@ export default {
       state.cart.push({ product, quantity })
     }
   },
+    
+    
   actions: {
     addToCart: ({commit}, { product, quantity }) => {
       commit('ADD_TO_CART', { product, quantity })
-    }
+    },
   }
 }

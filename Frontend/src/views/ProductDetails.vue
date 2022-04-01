@@ -6,13 +6,13 @@
       </div>
       <div class="col-lg-6 text-center text-lg-start">
         <h2>{{product.name}}</h2>
-        <p class="h3 text-danger">{{product.price}} SEK</p>
-        <div class="mt-5">
+        <p class="h3">{{product.price}} SEK</p>
+        <div class="mt-3 mt-lg-5">
           <p>{{product.desc}}</p>
         </div>
       </div>
-      <div class="text-end mt-5">
-        <button @click="addToCart({ product, quantity })" class="btn btn-info"><i class="fa-solid fa-cart-plus"></i> Add to cart</button>
+      <div class="col-lg-12 text-lg-end text-center mt-lg-5">
+        <button @click="addToCart({ product, quantity })" class="btn btn-info "><i class="fa-solid fa-cart-plus"></i> Add to cart</button>
       </div>
 
     </div>
