@@ -10,7 +10,6 @@
       <div class="card-body text-center">
         <h5 class="card-title">{{ product.name }}</h5>
         <p class="card-text">{{ product.short }}</p>
-        <!-- <router-link type="button" class="btn btn-info ms-auto" :to="{ name: 'productDetails', params: { id: product._id }}">Show product</router-link> -->
       </div>
     </div>
   </div>

@@ -23,6 +23,7 @@
 
 export default {
   props: ['item'],
+    
   methods: {
   
     decrement() {
@@ -32,10 +33,10 @@ export default {
       console.log('plus')
       
     },
-     
-     
-  }  
-}
+    
+  }    
+}  
+
 
 
 </script>
