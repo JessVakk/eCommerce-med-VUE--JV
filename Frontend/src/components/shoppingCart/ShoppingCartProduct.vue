@@ -12,7 +12,7 @@
     <div>
       <div class="btn-group btn-group-sm me-2">
         <button  class="btn btn-dark" @click.stop="decrement">-</button>
-        <button class="btn btn-dark" @click.stop="increment">+</button>
+        <button class="btn btn-dark" v-on:click="incrementCounter" id="addItem" @click.stop="increment">+</button>
       </div>
       <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash" ></i></button>
     </div>
@@ -20,18 +20,24 @@
 </template>
 
 <script>
+
 export default {
   props: ['item'],
   methods: {
+  
     decrement() {
       console.log('minus')
     },
     increment() {
       console.log('plus')
+      
     },
-   
-  }
+     
+     
+  }  
 }
+
+
 </script>
 
 <style scoped>
